@@ -1,6 +1,7 @@
 # session connection with required scopes
 $script:AuthRequiredScopes = @('UserAuthenticationMethod.Read.All','User.Read.All','Directory.Read.All')
 
+[OutputType([pscustomobject])]
 function Initialize-AuthMethodsSession {
   [CmdletBinding()]
   param(
