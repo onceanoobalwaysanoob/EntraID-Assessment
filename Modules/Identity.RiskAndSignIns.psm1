@@ -3,14 +3,15 @@ $script:RiskRequiredScopes   = @('Directory.Read.All','User.Read.All','IdentityR
 $script:RiskDetectScope      = 'IdentityRiskEvent.Read.All'
 $script:AuditSignInScope     = 'AuditLog.Read.All'
 
+[OutputType([pscustomobject])]
 function Initialize-RiskSession {
   [CmdletBinding()]
   param(
     [string] $TenantId,
     [ValidateSet('Global','USGov','USGovHigh','USGovDoD','China')]
     [string] $Environment = 'Global',
-    [switch] $IncludeDetections,   # add IdentityRiskEvent.Read.All
-    [switch] $NeedSignIns          # add AuditLog.Read.All
+    [switch] $IncludeDetections,   
+    [switch] $NeedSignIns          
   )
 
   $scopes = @($script:RiskRequiredScopes)
@@ -26,6 +27,7 @@ function Initialize-RiskSession {
 }
 
 ## get risky users
+[OutputType([pscustomobject])]
 function Get-RiskyUsers {
     [CmdletBinding()]
     param(
@@ -142,6 +144,7 @@ function Get-RiskyUsers {
 }
 
 ## get users with sign in anomalies
+[OutputType([pscustomobject])]
 function Find-SignInAnomalies {
     [CmdletBinding()]
     param(
