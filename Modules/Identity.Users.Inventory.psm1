@@ -1,6 +1,7 @@
 # session connection with required scopes
 $script:InvRequiredScopes = @('Directory.Read.All','User.Read.All','AuditLog.Read.All')
 
+[OutputType([pscustomobject])]
 function Initialize-UsersInventorySession {
   [CmdletBinding()]
   param(
@@ -20,6 +21,7 @@ function Initialize-UsersInventorySession {
 
 # collection
 ## retrieve all users
+[OutputType([pscustomobject])]
 function Get-UserInventory {
     [CmdletBinding()]
     param(
@@ -53,6 +55,7 @@ function Get-UserInventory {
 }
 
 ## enabled users
+[OutputType([pscustomobject])]
 function Get-EnabledUsers {
     [CmdletBinding()]
     param(
@@ -62,6 +65,7 @@ function Get-EnabledUsers {
 }
 
 ## disabled users
+[OutputType([pscustomobject])]
 function Get-DisabledUsers {
     [CmdletBinding()]
     param(
@@ -71,6 +75,7 @@ function Get-DisabledUsers {
 }
 
 ## cloud users
+[OutputType([pscustomobject])]
 function Get-CloudUsers {
     [CmdletBinding()]
     param(
@@ -80,6 +85,7 @@ function Get-CloudUsers {
 }
 
 ## on-premises synced users
+[OutputType([pscustomobject])]
 function Get-SyncedUsers {
     [CmdletBinding()]
     param(
@@ -89,6 +95,7 @@ function Get-SyncedUsers {
 }
 
 ## guest users
+[OutputType([pscustomobject])]
 function Get-GuestUsers {
     [CmdletBinding()]
     param(
@@ -98,6 +105,7 @@ function Get-GuestUsers {
 }
 
 ## licensed users
+[OutputType([pscustomobject])]
 function Get-LicensedUsers {
     [CmdletBinding()]
     param(
@@ -107,6 +115,7 @@ function Get-LicensedUsers {
 }
 
 ## unlicensed users
+[OutputType([pscustomobject])]
 function Get-UnlicensedUsers {
     [CmdletBinding()]
     param(
@@ -116,6 +125,7 @@ function Get-UnlicensedUsers {
 }
 
 ## active users
+[OutputType([pscustomobject])]
 function Get-ActiveUsers {
     [CmdletBinding()]
     param(
@@ -125,6 +135,7 @@ function Get-ActiveUsers {
 }
 
 ## inactive users
+[OutputType([pscustomobject])]
 function Get-StaleUsers {
     [CmdletBinding()]
     param(
@@ -140,6 +151,7 @@ function Get-StaleUsers {
 }
 
 ## get users with non expiring passwords
+[OutputType([pscustomobject])]
 function Get-UsersWithNonExpiringPasswords {
     [CmdletBinding()] 
     param(
@@ -149,6 +161,7 @@ function Get-UsersWithNonExpiringPasswords {
 }
 
 ## get users password change dates
+[OutputType([pscustomobject])]
 function Get-UserPasswordChangeDates {
     [CmdletBinding()] 
     param(
